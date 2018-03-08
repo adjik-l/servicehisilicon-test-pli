@@ -692,7 +692,7 @@ eServiceHisilicon::eServiceHisilicon(eServiceReference ref):
 	m_seekable = 0;
 	m_bufferpercentage = 0;
 
-	m_useragent = "Enigma2 HbbTV/1.1.1 (+PVR+RTSP+DL;OpenPLi;;;)";
+	m_useragent = "Enigma2 HbbTV/1.1.1 (+PVR+RTSP+DL;OpenVision;;;)";
 	m_extra_headers = "";
 	m_download_buffer_path = "";
 	m_prev_decoder_time = -1;
@@ -1823,20 +1823,9 @@ int eServiceHisilicon::getCurrentTrack()
 
 RESULT eServiceHisilicon::selectTrack(unsigned int i)
 {
-	bool validposition = false;
-	pts_t ppos = 0;
-	if (getPlayPosition(ppos) >= 0)
-	{
-		validposition = true;
-		ppos -= 90000;
-		if (ppos < 0)
-			ppos = 0;
-	}
-	if (validposition)
-	{
-		/* flush */
-		seekTo(ppos);
-	}
+
+	seekRelative(-1, 90000); // flush
+
 	return selectAudioStream(i);
 }
 
