@@ -7,7 +7,7 @@ from Plugins.Plugin import PluginDescriptor
 from Screens.Screen import Screen
 
 config.plugins.servicehisilicon = ConfigSubsection()
-config.plugins.servicehisilicon.activate = ConfigYesNo(default=False)
+config.plugins.servicehisilicon.activate = ConfigYesNo(default=True)
 
 class HisiSetup(ConfigListScreen, Screen):
 	skin = """
