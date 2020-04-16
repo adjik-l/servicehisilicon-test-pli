@@ -3,7 +3,7 @@
 
 static PyMethodDef servicehisiliconMethods[] =
 {
-	 {NULL,NULL,0,NULL}
+	{NULL,NULL,0,NULL}
 };
 
 PyMODINIT_FUNC
