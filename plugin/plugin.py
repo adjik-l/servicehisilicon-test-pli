@@ -55,7 +55,7 @@ def main(session, **kwargs):
 
 def autostart(reason, **kwargs):
 	if config.plugins.servicehisilicon.activate.value:
-		import servicehisilicon
+		from Plugins.SystemPlugins.ServiceHisilicon import servicehisilicon
 
 def Plugins(**kwargs):
 	return [
