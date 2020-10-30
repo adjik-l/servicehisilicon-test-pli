@@ -45,7 +45,7 @@ class HisiSetup(ConfigListScreen, Screen):
     def save(self):
         for x in self["config"].list:
             x[1].save()
-        self.close(True,self.session)
+        self.close(True, self.session)
 
     def exit(self):
         for x in self["config"].list:
