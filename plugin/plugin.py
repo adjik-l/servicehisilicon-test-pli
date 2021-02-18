@@ -21,7 +21,7 @@ class HisiSetup(ConfigListScreen, Screen):
 			<ePixmap name="green" position="317,121" zPosition="2" size="140,40" pixmap="buttons/green.png" transparent="1" alphatest="on" />
 		</screen>""" % _("ServiceHisilicon Setup")
 
-    def __init__(self, session, args = 0):
+    def __init__(self, session, args=0):
         self.session = session
         Screen.__init__(self, session)
 
@@ -61,6 +61,6 @@ def autostart(reason, **kwargs):
 
 def Plugins(**kwargs):
     return [
-            PluginDescriptor(name = _("ServiceHisilicon Setup"), description = _("Enable/Disable hisilicon libraries for multimedia player."), where = PluginDescriptor.WHERE_PLUGINMENU, icon = "servicehisilicon.png", fnc = main),
-            PluginDescriptor(where = PluginDescriptor.WHERE_AUTOSTART, needsRestart = True, fnc = autostart)
+            PluginDescriptor(name=_("ServiceHisilicon Setup"), description=_("Enable/Disable hisilicon libraries for multimedia player."), where=PluginDescriptor.WHERE_PLUGINMENU, icon="servicehisilicon.png", fnc=main),
+            PluginDescriptor(where=PluginDescriptor.WHERE_AUTOSTART, needsRestart=True, fnc=autostart)
     ]
