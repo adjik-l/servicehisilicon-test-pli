@@ -11,6 +11,7 @@ from Screens.Screen import Screen
 config.plugins.servicehisilicon = ConfigSubsection()
 config.plugins.servicehisilicon.activate = ConfigYesNo(default=True)
 
+
 class HisiSetup(ConfigListScreen, Screen):
     skin = """
 		<screen name="HisiSetup" position="center,center" size="574,165" title="%s">
@@ -52,12 +53,15 @@ class HisiSetup(ConfigListScreen, Screen):
             x[1].cancel()
         self.close()
 
+
 def main(session, **kwargs):
     session.open(HisiSetup)
+
 
 def autostart(reason, **kwargs):
     if config.plugins.servicehisilicon.activate.value:
         from Plugins.SystemPlugins.ServiceHisilicon import servicehisilicon
+
 
 def Plugins(**kwargs):
     return [
