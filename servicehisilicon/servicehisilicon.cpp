@@ -769,8 +769,8 @@ eServiceHisilicon::eServiceHisilicon(eServiceReference ref):
 	{
 		::close(tmp_fd);
 		tmp_fd = -1;	
-		myFdKluge = ::open("/dev/null", O_RDONLY | O_CLOEXEC);
-		/* eDebug("[eServiceHisilicon] opening null fd returned: %d", myFdKluge); */
+		fd0lock = ::open("/dev/null", O_RDONLY | O_CLOEXEC);
+		/* eDebug("[eServiceHisilicon] opening null fd returned: %d", fd0lock); */
 	}
 	if (tmp_fd != -1)
 	{
